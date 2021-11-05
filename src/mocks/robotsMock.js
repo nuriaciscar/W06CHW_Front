@@ -1,4 +1,4 @@
-const robots = [
+const robotsMock = [
   {
     _id: "1",
     name: "Wall-e",
@@ -21,4 +21,4 @@ const robots = [
   },
 ];
 
-export default robots;
+export default robotsMock;
