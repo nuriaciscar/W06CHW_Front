@@ -1,13 +1,13 @@
 const Robot = () => {
-  const robot = {
-    _id,
-    name,
-    url,
-    features,
-    speed,
-    stamina,
-    creationDate,
-  };
+  // const robot = {
+  //   _id,
+  //   name,
+  //   url,
+  //   features,
+  //   speed,
+  //   stamina,
+  //   creationDate,
+  // };
 
   return (
     <li className="robot">
@@ -22,6 +22,7 @@ const Robot = () => {
         </ul>
       </div>
       <button>DELETE</button>
+      <button>UPDATE</button>
     </li>
   );
 };
