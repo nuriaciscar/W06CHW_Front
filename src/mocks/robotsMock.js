@@ -3,10 +3,10 @@ const robotsMock = [
     _id: "1",
     name: "Wall-e",
     url: "http://macmagazine.com.br/blog/wp-content/uploads/2008/06/28-walle021.jpg",
-    characteristics: {
+    features: {
       speed: 2,
       stamina: 10,
-      crationDate: new Date(),
+      creationDate: new Date(),
     },
   },
   {
@@ -16,7 +16,7 @@ const robotsMock = [
     characteristics: {
       speed: 7,
       stamina: 3,
-      crationDate: new Date(),
+      creationDate: new Date(),
     },
   },
 ];
