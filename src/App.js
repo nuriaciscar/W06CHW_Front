@@ -1,25 +1,21 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import "./App.css";
-import Robot from "./components/Robot/Robot";
+import RobotList from "./components/RobotList/RobotList";
 import FormCreate from "./components/FormCreate/FormCreate";
-import { loadRobotsThunk } from "./redux/thunks/robotsThunks";
+import useRobots from "./hooks/useRobots";
+import { useEffect } from "react";
 
 function App() {
-  const robots = useSelector(({ robots }) => robots);
-  const dispatch = useDispatch();
-
+  const { loadRobots, robots } = useRobots();
+  console.log(robots);
   useEffect(() => {
-    dispatch(loadRobotsThunk());
-  }, [dispatch]);
+    loadRobots();
+  }, [loadRobots]);
 
   return (
     <div className="App">
-      {JSON.stringify(robots)}
-      <header className="App-header"></header>
+      <h1>My robots</h1>
       <FormCreate />
-      <Robot />
+      <RobotList />
     </div>
   );
 }

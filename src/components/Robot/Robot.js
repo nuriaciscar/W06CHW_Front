@@ -1,18 +1,14 @@
-const Robot = () => {
-  // const robot = {
-  //   _id,
-  //   name,
-  //   url,
-  //   features,
-  //   speed,
-  //   stamina,
-  //   creationDate,
-  // };
-
+const Robot = ({ url, name }) => {
   return (
     <li className="robot">
-      <image className="robot_image"></image>
-      <h2 className="robot_name">Robot</h2>
+      <img
+        className="robot_image"
+        src={url}
+        width="100"
+        height="100"
+        alt="Robot"
+      ></img>
+      <h2 className="robot_name">{name}</h2>
       <div className="robot_features">
         <p className="robot_features_title">Features: </p>
         <ul className="robot_features_list">
