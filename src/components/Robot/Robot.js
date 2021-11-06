@@ -22,7 +22,7 @@ const Robot = () => {
         </ul>
       </div>
       <button>DELETE</button>
-      <button>UPDATE</button>
+      <button>CREATE</button>
     </li>
   );
 };
