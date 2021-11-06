@@ -1,14 +1,17 @@
 import Robot from "../Robot/Robot";
-
-//  key={robot.id}
+import useRobots from "../../hooks/useRobots";
 
 const RobotList = () => {
+  const { robots } = useRobots();
+  console.log("hola");
   return (
     <>
       <ul className>
-        <li>
-          <Robot />
-        </li>
+        {robots.map((robot) => (
+          <li>
+            <Robot key={robot._id} {...robot} />
+          </li>
+        ))}
       </ul>
     </>
   );
