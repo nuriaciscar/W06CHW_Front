@@ -1,4 +1,3 @@
-import { loadRobotsAction } from "../actions/actionCreators";
 import actionTypes from "../actions/actionTypes";
 
 const robotsReducer = (robots = [], action) => {

@@ -1,4 +1,4 @@
-import robotsReducer from "./toDoReducer";
+import robotsReducer from "./robotsReducer";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
