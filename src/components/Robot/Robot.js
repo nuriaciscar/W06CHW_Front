@@ -21,6 +21,7 @@ const Robot = () => {
           <li className="robot_features_item">creationDate</li>
         </ul>
       </div>
+      <button>DELETE</button>
     </li>
   );
 };
