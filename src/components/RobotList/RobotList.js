@@ -2,8 +2,8 @@ import Robot from "../Robot/Robot";
 const RobotList = () => {
   return (
     <>
-      <h1>My Robots</h1>
-      <ul>
+      <h1 className>My Robots</h1>
+      <ul className>
         <li key={robot.id}>
           <Robot />
         </li>
