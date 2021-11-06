@@ -1,9 +1,11 @@
-import robotsMock from "../../mocks/robotsMock";
 import { loadRobotsAction } from "../actions/actionCreators";
 
-export const loadRobotsThunk = () => {
-  return (dispatch) => {
-    const robots = robotsMock;
-    dispatch(loadRobotsAction(robots));
-  };
+// const urlApi = process.env.REACT_APP_URL_API;
+
+export const loadRobotsThunk = () => async (dispatch) => {
+  const response = await fetch("https://app-robots.herokuapp.com/robots");
+  const robots = await response.json();
+  dispatch(loadRobotsAction(robots));
 };
+
+export default loadRobotsThunk;
