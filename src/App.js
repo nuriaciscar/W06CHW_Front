@@ -1,5 +1,4 @@
 import "./App.css";
-import RobotList from "./components/RobotList/RobotList";
 import FormCreate from "./components/FormCreate/FormCreate";
 import useRobots from "./hooks/useRobots";
 import { useEffect } from "react";
@@ -9,7 +8,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import HomePage from "./pages/Homepage";
+import HomePage from "./pages/HomePage/HomePage";
+import Header from "./components/Header/Header";
 
 function App() {
   const { loadRobots, robots } = useRobots();
@@ -30,11 +30,9 @@ function App() {
             <FormCreate />
           </Route>
           <Route path="/" exact>
-            <Redirect to="/home" />
+            <Redirect to="/robots" />
           </Route>
         </Switch>
-
-        <h1>My robots</h1>
       </Router>
     </div>
   );
