@@ -6,7 +6,6 @@ const Robot = ({ url, name, speed, stamina, creationDate, idRobot }) => {
   const deleteOnClick = () => {
     deleteRobots(idRobot);
   };
-  console.log({ deleteRobots });
 
   return (
     <div className="col">

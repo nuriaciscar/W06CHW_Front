@@ -15,13 +15,12 @@ export const loadRobotsThunk = () => {
 
 export const deleteRobotsThunk = (idRobot) => async (dispatch) => {
   const response = await fetch(
-    `https://app-robots2.herokuapp.com/robots/delete/${idRobot}`,
+    `https://app-robots2.herokuapp.com/robots/delete/:${idRobot}`,
     {
       method: "DELETE",
     }
   );
   await response.json();
-  if (response.ok) {
-    dispatch(deleteRobotsAction(idRobot));
-  }
+
+  dispatch(deleteRobotsAction(idRobot));
 };

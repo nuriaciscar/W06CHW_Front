@@ -5,7 +5,7 @@ export const loadRobotsAction = (robots) => ({
   robots,
 });
 
-export const deleteRobotsAction = (robots) => ({
+export const deleteRobotsAction = (idRobot) => ({
   type: actionTypes.deleteRobots,
-  robots,
+  idRobot,
 });
