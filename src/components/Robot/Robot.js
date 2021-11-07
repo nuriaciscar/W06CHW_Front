@@ -16,9 +16,11 @@ const Robot = ({ url, name, features }) => {
         <div className="card-body">
           <p className="card-text">Features: </p>
           <ul className="robot_features_list">
-            <li className="robot_features_item">{features.speed}</li>
-            <li className="robot_features_item">{features.stamina}</li>
-            <li className="robot_features_item">{features.creationDate}</li>
+            <li className="robot_features_item">Speed: {features.speed}</li>
+            <li className="robot_features_item">Stamina:{features.stamina}</li>
+            <li className="robot_features_item">
+              Creation Date:{features.creationDate}
+            </li>
           </ul>
         </div>
         <div class="d-flex justify-content-center align-items-center">
