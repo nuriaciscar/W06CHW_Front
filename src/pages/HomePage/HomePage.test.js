@@ -18,7 +18,7 @@ describe("Given a HomePage component,", () => {
       server.close();
     });
 
-    test("Then it shouls render the list of robots", async () => {
+    test("Then it should render the list of robots", async () => {
       const robot = [
         {
           _id: "1",

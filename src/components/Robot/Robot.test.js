@@ -1,9 +1,8 @@
 import Robot from "./Robot";
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import renderWithProviders from "../../utils/test-utils";
 
-import { render } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 
 describe("Given a component Robot", () => {
   let robot;
@@ -18,20 +17,21 @@ describe("Given a component Robot", () => {
         creationDate: new Date(),
       },
     };
+  });
+  describe("When it receives a Robot", () => {
+    test("Then it should render its image, its name and its features", () => {
+      renderWithProviders(<Robot robot={robot} />);
 
-    describe("When it receives a Robot", () => {
-      test("Then it should render its image, its name and its features", () => {
-        render(
-          <Router>
-            <Robot robot={robot} />
-          </Router>
-        );
-      });
+      const name = screen.getByRole("heading", { name: robot.name });
+      // const speed = screen.getByText("Speed: " + robot.features.speed);
+
+      expect(name).toBeInTheDocument();
+      // expect(speed).toBeInTheDocument();
     });
-    describe("When it's rendered'", () => {
-      test("Then it renders a Robot", () => {
-        renderWithProviders(<Robot />);
-      });
+  });
+  describe("When it's rendered'", () => {
+    test("Then it renders a Robot", () => {
+      renderWithProviders(<Robot />);
     });
   });
 });
