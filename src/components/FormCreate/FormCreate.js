@@ -45,8 +45,9 @@ const FormCreate = () => {
           id="date"
           placeholder="Creation Date"
           name="date"
-          className="form-control"
           required
+          type="date"
+          className="form-control"
         ></input>
         <button type="submit" className="btn btn-primary">
           Create Robot
