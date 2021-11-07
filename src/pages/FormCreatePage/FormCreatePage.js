@@ -1,6 +1,6 @@
 import FormCreate from "../../components/FormCreate/FormCreate";
 
-const HomePage = () => {
+const FormCreatePage = () => {
   return (
     <main className="main">
       <section>
@@ -10,4 +10,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default FormCreatePage;
