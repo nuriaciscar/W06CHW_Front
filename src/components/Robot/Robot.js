@@ -1,4 +1,13 @@
-const Robot = ({ url, name, speed, stamina, creationDate }) => {
+import useRobots from "../../hooks/useRobots";
+
+const Robot = ({ url, name, speed, stamina, creationDate, idRobot }) => {
+  const { deleteRobots } = useRobots();
+
+  const deleteOnClick = () => {
+    deleteRobots(idRobot);
+  };
+  console.log({ deleteRobots });
+
   return (
     <div className="col">
       <li className="card shadow-sm">
@@ -25,11 +34,15 @@ const Robot = ({ url, name, speed, stamina, creationDate }) => {
         </div>
         <div className="d-flex justify-content-center align-items-center">
           <div className="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              onClick={deleteOnClick}
+            >
               DELETE
             </button>
             <button type="button" className="btn btn-sm btn-outline-secondary">
-              CREATE
+              UPDATE
             </button>
           </div>
         </div>
