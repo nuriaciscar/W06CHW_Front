@@ -23,3 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+/.sonar
+/.scannerwork
+sonar-project.properties
+.scannerwork
