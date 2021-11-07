@@ -1,17 +1,25 @@
 import Robot from "../Robot/Robot";
 import useRobots from "../../hooks/useRobots";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const RobotList = () => {
-  const { robots } = useRobots();
+  const { robots, loadRobots } = useRobots();
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    loadRobots();
+  }, [dispatch, loadRobots]);
 
   return (
     <>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div className="album py-5 bg-light">
+        <div className="container">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <ul className>
               {robots.map((robot) => (
-                <li key={robot._id}>
+                <li key={robot.idRobot}>
                   <Robot
                     url={robot.url}
                     name={robot.name}

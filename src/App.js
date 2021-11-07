@@ -12,8 +12,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 
 function App() {
-  const { loadRobots, robots } = useRobots();
-  console.log(robots);
+  const { loadRobots } = useRobots();
+
   useEffect(() => {
     loadRobots();
   }, [loadRobots]);

@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <main className="main">
       <section>
-        <NavLink to="/robots" exact>
+        <NavLink to="/" exact>
           HOME
         </NavLink>
         <NavLink to="/robots/create" exact>
