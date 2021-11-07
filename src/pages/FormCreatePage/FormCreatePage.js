@@ -1,10 +1,10 @@
-import RobotList from "../components/RobotList/RobotList";
+import FormCreate from "../../components/FormCreate/FormCreate";
 
 const HomePage = () => {
   return (
     <main className="main">
       <section>
-        <RobotList />
+        <FormCreate />
       </section>
     </main>
   );
