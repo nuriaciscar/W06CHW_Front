@@ -1,6 +1,4 @@
 import Robot from "./Robot";
-// import { render } from "@testing-library/react";
-// import { BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import renderWithProviders from "../../utils/test-utils";
