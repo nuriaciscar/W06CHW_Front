@@ -9,6 +9,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import HomePage from "./pages/Homepage";
 
 function App() {
   const { loadRobots, robots } = useRobots();
@@ -26,7 +27,7 @@ function App() {
             <HomePage />
           </Route>
           <Route path="/robots/create" exact>
-            <MyNewsPage />
+            <FormCreate />
           </Route>
           <Route path="/" exact>
             <Redirect to="/home" />
@@ -34,8 +35,6 @@ function App() {
         </Switch>
 
         <h1>My robots</h1>
-        <FormCreate />
-        <RobotList />
       </Router>
     </div>
   );
