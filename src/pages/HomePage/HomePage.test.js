@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { server } from "./mocks/server.js";
+import { server } from "../../mocks/server";
 import HomePage from "./HomePage";
 import configureStore from "../redux/store";
 const store = configureStore();
