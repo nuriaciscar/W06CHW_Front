@@ -1,8 +1,15 @@
 import "./App.css";
-import RobotList from "./components/RobotList/RobotList";
 import FormCreate from "./components/FormCreate/FormCreate";
 import useRobots from "./hooks/useRobots";
 import { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import Header from "./components/Header/Header";
 
 function App() {
   const { loadRobots, robots } = useRobots();
@@ -12,10 +19,21 @@ function App() {
   }, [loadRobots]);
 
   return (
-    <div className="App">
-      <h1>My robots</h1>
-      <FormCreate />
-      <RobotList />
+    <div className="container">
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/robots" exact>
+            <HomePage />
+          </Route>
+          <Route path="/robots/create" exact>
+            <FormCreate />
+          </Route>
+          <Route path="/" exact>
+            <Redirect to="/robots" />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
