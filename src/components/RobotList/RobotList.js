@@ -3,16 +3,22 @@ import useRobots from "../../hooks/useRobots";
 
 const RobotList = () => {
   const { robots } = useRobots();
-  console.log("hola");
+
   return (
     <>
-      <ul className>
-        {robots.map((robot) => (
-          <li>
-            <Robot key={robot._id} {...robot} />
-          </li>
-        ))}
-      </ul>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <ul className>
+              {robots.map((robot) => (
+                <li>
+                  <Robot key={robot._id} {...robot} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -1,25 +1,38 @@
-const Robot = ({ url, name }) => {
+const Robot = ({ url, name, features }) => {
   return (
-    <li className="robot">
-      <img
-        className="robot_image"
-        src={url}
-        width="100"
-        height="100"
-        alt="Robot"
-      ></img>
-      <h2 className="robot_name">{name}</h2>
-      <div className="robot_features">
-        <p className="robot_features_title">Features: </p>
-        <ul className="robot_features_list">
-          <li className="robot_features_item">Speed</li>
-          <li className="robot_features_item">Stamina</li>
-          <li className="robot_features_item">creationDate</li>
-        </ul>
-      </div>
-      <button>DELETE</button>
-      <button>CREATE</button>
-    </li>
+    <div class="col">
+      <li className="card shadow-sm">
+        <img
+          className="bd-placeholder-img card-img-top"
+          src={url}
+          width="100%"
+          height="225"
+          alt="Robot"
+          aria-label="Placeholder: Thumbnail"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+        ></img>
+        <h2 className="robot_name">{name}</h2>
+        <div className="card-body">
+          <p className="card-text">Features: </p>
+          <ul className="robot_features_list">
+            <li className="robot_features_item">{features.speed}</li>
+            <li className="robot_features_item">{features.stamina}</li>
+            <li className="robot_features_item">{features.creationDate}</li>
+          </ul>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm btn-outline-secondary">
+              DELETE
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">
+              CREATE
+            </button>
+          </div>
+        </div>
+      </li>
+    </div>
   );
 };
 
