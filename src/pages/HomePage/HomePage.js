@@ -4,6 +4,7 @@ const HomePage = () => {
   return (
     <main className="main">
       <section>
+        <h1>My Robots</h1>
         <RobotList />
       </section>
     </main>
