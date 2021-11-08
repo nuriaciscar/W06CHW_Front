@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
   const { loadRobots } = useRobots();
@@ -28,6 +29,12 @@ function App() {
           </Route>
           <Route path="/robots/create" exact>
             <FormCreate />
+          </Route>
+          <Route path="/login" exact>
+            <LoginForm />
+          </Route>
+          <Route path="/logout" exact>
+            <Logout />
           </Route>
           <Route path="/" exact>
             <Redirect to="/robots" />
