@@ -19,6 +19,12 @@ const Header = () => {
           >
             CREATE ROBOT
           </NavLink>
+          <NavLink to="/login" exact className="nav-link active">
+            LOGIN
+          </NavLink>
+          <NavLink to="/logout" exact className="nav-link active">
+            LOGOUT
+          </NavLink>
         </>
         )
       </header>
