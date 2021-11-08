@@ -11,9 +11,22 @@ import {
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import LoginForm from "./components/LoginForm/LoginForm";
+import { userLoginAction } from "./redux/actions/actionCreators";
+import jwtDecode from "jwt-decode";
+import { useDispatch } from "react-redux";
 
 function App() {
   const { loadRobots } = useRobots();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = JSON.parse(
+      localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
+    );
+    if (token) {
+      dispatch(userLoginAction(jwtDecode(token.token)));
+    }
+  });
 
   useEffect(() => {
     loadRobots();
@@ -24,20 +37,23 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route path="/home" exact>
+            <LoginForm />
+          </Route>
           <Route path="/robots" exact>
             <HomePage />
           </Route>
           <Route path="/robots/create" exact>
             <FormCreate />
           </Route>
-          <Route path="/login" exact>
+          <Route path="/user/login" exact>
             <LoginForm />
           </Route>
-          <Route path="/logout" exact>
+          {/* <Route path="/logout" exact>
             <Logout />
-          </Route>
+          </Route> */}
           <Route path="/" exact>
-            <Redirect to="/robots" />
+            <Redirect to="/home" />
           </Route>
         </Switch>
       </Router>

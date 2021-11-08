@@ -28,7 +28,7 @@ describe("Given a robotsReducer reducer", () => {
       expect(newRobotsList).toEqual(robots);
     });
   });
-  describe("When it receives arobots list and a delete action with an idRobot", () => {
+  describe("When it receives a robot list and a delete action with an idRobot", () => {
     test("Then it should return a new robots list without the robot received", () => {
       const initialRobots = [
         {
