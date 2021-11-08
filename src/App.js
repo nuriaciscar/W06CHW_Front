@@ -49,9 +49,9 @@ function App() {
           <Route path="/user/login" exact>
             <LoginForm />
           </Route>
-          {/* <Route path="/logout" exact>
+          <Route path="/user/logout" exact>
             <Logout />
-          </Route> */}
+          </Route>
           <Route path="/" exact>
             <Redirect to="/home" />
           </Route>
