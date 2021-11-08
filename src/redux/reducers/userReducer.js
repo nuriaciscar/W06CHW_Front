@@ -5,10 +5,7 @@ const userReducer = (user = { isAuthenticated: false, user: {} }, action) => {
 
   switch (action.type) {
     case actionTypes.loginUser:
-      newUser = {
-        isAuthenticated: true,
-        user: action.user,
-      };
+      newUser = { ...user, isAuthenticated: true, user: action.user };
       break;
     default:
       newUser = user;

@@ -32,7 +32,7 @@ const Robot = ({
         <div className="btn-group">
           <button
             type="button"
-            class="btn btn-sm btn-outline-secondary m"
+            className="btn btn-sm btn-outline-secondary m"
             onClick={() => onDeleteClick(_id)}
           >
             DELETE

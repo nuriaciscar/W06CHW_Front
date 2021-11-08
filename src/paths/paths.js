@@ -1,9 +1,9 @@
 const paths = {
+  main: "/home",
   home: "/robots",
   create: "/robots/create",
-  login: "/login",
-  logout: "/logout",
-
+  login: "/user/login",
+  logout: "/user/logout",
   all: "/",
 };
 

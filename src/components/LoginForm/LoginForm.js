@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import React, { useState } from "react";
-import { useHistory } from "react-router";
-import { loginUserThunk } from "../../redux/thunks/loginThunks";
+import { useHistory } from "react-router-dom";
+import { loginUserThunk } from "../../redux/thunks/loginUserThunk";
 
 const LoginForm = () => {
   const initialUser = {
@@ -10,13 +10,14 @@ const LoginForm = () => {
   };
 
   const [userData, setUserData] = useState(initialUser);
-  const dispatch = useDispatch;
-  const history = useHistory;
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const onSubmit = (event) => {
     event.preventDefault();
     dispatch(loginUserThunk(userData));
-    history("/robots");
+
+    history.push("/robots");
   };
 
   const changeUserData = (event) => {
@@ -32,7 +33,7 @@ const LoginForm = () => {
       <input
         type="text"
         id="username"
-        placeholder="Name"
+        placeholder="Username"
         name="username"
         className="form-control"
         required
@@ -40,15 +41,17 @@ const LoginForm = () => {
       ></input>
       <label htmlFor="password">Password</label>
       <input
-        type="text"
+        type="password"
         id="password"
-        placeholder="Name"
+        placeholder="Password"
         name="password"
         className="form-control"
         required
         onChange={changeUserData}
       ></input>
-      <button>Login</button>
+      <button type="submit" className="btn btn-primary">
+        Login
+      </button>
     </form>
   );
 };
