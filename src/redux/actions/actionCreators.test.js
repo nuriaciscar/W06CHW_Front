@@ -50,7 +50,7 @@ describe("Given a deleteRobots actionCreator", () => {
         robots: robots,
       };
 
-      const result = deleteRobotsAction(robots);
+      const result = deleteRobotsAction(idRobot);
 
       expect(result).toEqual(expectedAction);
     });
