@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUserThunk } from "../redux/thunks/loginUserThunk";
 
 const useUser = () => {
-  const user = useSelector(({ store }) => store.user);
+  const user = useSelector(({ user }) => user);
   const dispatch = useDispatch();
 
   const loginUser = useCallback(

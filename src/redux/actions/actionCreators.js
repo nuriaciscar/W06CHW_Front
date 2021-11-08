@@ -11,6 +11,6 @@ export const deleteRobotsAction = (idRobot) => ({
 });
 
 export const userLoginAction = (user) => ({
-  type: actionTypes.userLogin,
+  type: actionTypes.loginUser,
   user,
 });

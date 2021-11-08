@@ -1,12 +1,13 @@
-import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import useUser from "../../hooks/useUser";
 
 const Header = () => {
-  const { isAuthenticated } = useSelector(({ user }) => user);
+  const { user } = useUser();
+
   return (
     <main className="container">
       <header className="d-flex justify-content-center py-3">
-        {isAuthenticated ? (
+        {user.isAuthenticated ? (
           <>
             <NavLink to="/" exact className="nav-link active">
               HOME
@@ -19,11 +20,9 @@ const Header = () => {
             >
               CREATE ROBOT
             </NavLink>
-            <NavLink to="/user/login" exact className="nav-link active">
-              LOGIN
-            </NavLink>
+
             <NavLink to="/user/logout" exact className="nav-link active">
-              LOGOUT
+              {user.isAuthenticated ? "LOGOUT" : "LOGIN"}
             </NavLink>
           </>
         ) : (

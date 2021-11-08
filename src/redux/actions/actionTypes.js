@@ -1,7 +1,7 @@
 const actionTypes = {
   loadRobots: "LOAD_ROBOTS",
   deleteRobots: "DELETE_ROBOTS",
-  userLogin: "LOGIN_USER",
+  loginUser: "LOGIN_USER",
   logoutUser: "LOGOUT_USER",
 };
 
