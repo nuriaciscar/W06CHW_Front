@@ -33,9 +33,9 @@ function App() {
           <Route path="/login" exact>
             <LoginForm />
           </Route>
-          <Route path="/logout" exact>
+          {/* <Route path="/logout" exact>
             <Logout />
-          </Route>
+          </Route> */}
           <Route path="/" exact>
             <Redirect to="/robots" />
           </Route>

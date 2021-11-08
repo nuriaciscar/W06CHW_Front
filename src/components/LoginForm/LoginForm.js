@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "@reach/router";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
+import { loginUserThunk } from "../../redux/thunks/loginThunks";
 
 const LoginForm = () => {
   const initialUser = {
@@ -10,12 +11,12 @@ const LoginForm = () => {
 
   const [userData, setUserData] = useState(initialUser);
   const dispatch = useDispatch;
-  const navigate = useNavigate();
+  const history = useHistory;
 
   const onSubmit = (event) => {
     event.preventDefault();
     dispatch(loginUserThunk(userData));
-    navigate("/robots");
+    history("/robots");
   };
 
   const changeUserData = (event) => {
@@ -35,6 +36,7 @@ const LoginForm = () => {
         name="username"
         className="form-control"
         required
+        onChange={changeUserData}
       ></input>
       <label htmlFor="password">Password</label>
       <input
@@ -44,6 +46,7 @@ const LoginForm = () => {
         name="password"
         className="form-control"
         required
+        onChange={changeUserData}
       ></input>
       <button>Login</button>
     </form>
