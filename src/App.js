@@ -11,6 +11,7 @@ import {
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import LoginForm from "./components/LoginForm/LoginForm";
+import Logout from "./components/Logout/Logout";
 import { userLoginAction } from "./redux/actions/actionCreators";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
