@@ -29,16 +29,14 @@ export const deleteRobotsThunk = (idRobot) => {
   };
 };
 
-export const loadRobotsThunk = () => {
-  return async (dispatch) => {
-    const { token } = JSON.parse(
-      localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
-    );
-    const response = await axios.get(
-      "https://app-robots2.herokuapp.com/robots",
-      { headers: { Authorization: "Bearer " + token } }
-    );
+export const loadRobotsThunk = () => async (dispatch) => {
+  const token = JSON.parse(
+    localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_KEY)
+  );
 
-    dispatch(loadRobotsAction(response.data));
-  };
+  const response = await axios.get("http://localhost:5000/robots", {
+    headers: { Authorization: "Bearer " + token },
+  });
+
+  dispatch(loadRobotsAction(response.data));
 };

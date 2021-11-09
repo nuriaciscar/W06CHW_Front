@@ -11,6 +11,7 @@ import {
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import LoginForm from "./components/LoginForm/LoginForm";
+import Logout from "./components/Logout/Logout";
 import { userLoginAction } from "./redux/actions/actionCreators";
 import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
@@ -49,9 +50,9 @@ function App() {
           <Route path="/user/login" exact>
             <LoginForm />
           </Route>
-          {/* <Route path="/logout" exact>
+          <Route path="/user/logout" exact>
             <Logout />
-          </Route> */}
+          </Route>
           <Route path="/" exact>
             <Redirect to="/home" />
           </Route>
