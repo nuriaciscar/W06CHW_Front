@@ -11,7 +11,7 @@ const userReducer = (user = { isAuthenticated: false, user: {} }, action) => {
       newUser = { ...user, isAuthenticated: false, user: {} };
       break;
     default:
-      newUser = { ...user };
+      newUser = user;
   }
   return newUser;
 };
